@@ -1,96 +1,208 @@
-# Project Title: DBMS Practices 💾
+# DBMS Practice Project: E-commerce Simulation 💾
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub issues](https://img.shields.io/github/issues/M-Mikran-Sandhu/DBMS-Practice)](https://github.com/M-Mikran-Sandhu/DBMS-Practice/issues)
+[![GitHub forks](https://img.shields.io/github/forks/M-Mikran-Sandhu/DBMS-Practice)](https://github.com/M-Mikran-Sandhu/DBMS-Practice/network)
+[![GitHub stars](https://img.shields.io/github/stars/M-Mikran-Sandhu/DBMS-Practice)](https://github.com/M-Mikran-Sandhu/DBMS-Practice/stargazers)
+
+<!-- Optional: Add a project logo or banner here -->
 
 ## Overview
 
-[Provide a concise and clear description of your DBMS project. Explain its purpose, what problem it solves, and its key features. For example: "This project is a relational database management system designed for a small business to manage customer information 🧑‍💼, orders 🛒, and inventory 📦. This is a practice repository for learning and experimenting with DBMS concepts."]
+Welcome to the DBMS Practice repository! This project serves as a practical environment for learning, experimenting, and honing skills related to Database Management Systems (DBMS) by simulating a basic **E-commerce Database**. It focuses on relational database concepts, SQL query practice, database design principles, and implementing core DBMS features within the context of managing customers, products, and orders. This repository provides a foundation for exploring data modeling, query optimization, and transaction management.
 
 ## Features
 
-The main features of DBMS:
-    * Customer management: Add ➕, update ✏️, delete 🗑️ customers
-    * Order processing: Create 📝, track 📍, and manage orders
-    * Inventory management: Track product stock 📊, add ➕/remove ➖ items
-    * Data querying: Using SQL ⚙️
-    * User authentication and authorization 🔒
-    * Reporting: Generate sales reports 📈, etc.
-    * Database backup and recovery 🔄
-    * [Any other relevant features]
+This repository is designed to support the implementation and practice of various DBMS features within an e-commerce context:
+
+*   **🧑‍💼 Data Modeling:** Designing and implementing database schemas (Conceptual, Logical, Physical) for customers, products, orders, and line items.
+*   **⚙️ SQL Querying:** Practicing basic to advanced SQL commands (SELECT, INSERT, UPDATE, DELETE, JOINs, Subqueries, Aggregations, Window Functions) relevant to e-commerce reporting (e.g., finding top customers, calculating sales totals).
+*   **➕ Data Manipulation:** Adding, updating, and deleting records for customers, products, and orders.
+*   **📊 Indexing & Optimization:** Understanding and applying indexing strategies (e.g., on foreign keys, frequently queried columns) to improve query performance for typical e-commerce lookups.
+*   **🔒 Transaction Management:** Implementing transactions to ensure atomicity for operations like placing an order (updating stock, creating order record).
+*   **🔄 Backup & Recovery:** Practicing basic database backup and recovery procedures (using tools like `pg_dump`).
+*   **🔐 Basic Access Control:** Exploring user roles and permissions within PostgreSQL (if desired).
+*   **📈 Reporting:** Generating sample reports, such as total sales per product or orders per customer, using SQL.
 
 ## Technical Details
 
-* **Programming Languages:** [e.g., Java ☕, Python 🐍, C++ 🚀, SQL 📊]
-* **Database System:** [e.g., MySQL 🐬, PostgreSQL 🐘, Oracle 🔶, SQLite <0xF0><0x9F><0xAA><0xB2>]
-* **Tools and Technologies:** [e.g., JDBC 🔗, ORM frameworks (Hibernate <0xF0><0x9F><0xAA><0x9D>, etc.), Libraries 📚, Operating System 💻, etc.]
-* **System Architecture:** [Optional: Briefly describe the system architecture, especially for complex projects. E.g., Client-server 🌐, 3-tier 🏢🏢🏢, etc.]
+*   **Programming Languages:** Python 🐍 (for scripting/application logic), SQL 📊 (for database interaction)
+*   **Database System:** PostgreSQL 🐘 (Version 12+ recommended)
+*   **Tools & Technologies:** Git 🐙 (for version control), SQLAlchemy (optional, for ORM interaction), DBeaver or pgAdmin (optional, for GUI database management)
+*   **Operating System:** Cross-platform (Linux 🐧, Windows 💻, macOS 🍎)
 
-## Installation and Setup
+## System Architecture (Optional)
 
-1.  **Prerequisites:**
-    * List software or dependencies that need to be installed before running the project:
-        * Java Development Kit (JDK) 8 or higher ☕
-        * MySQL Server 5.7 or higher 🐬
-        * [Any other dependencies]
-2.  **Installation Steps:**
-    * Step-by-step instructions on how to install and set up the project. Include commands ⌨️, file paths 📂, and any necessary configurations.
-        1.  Clone the repository: `git clone https://github.com/your-username/your-repo-name.git` ⬇️
-        2.  Navigate to the project directory: `cd your-repo-name` 🚶‍♀️
-        3.  Install dependencies (if any): `[e.g., pip install -r requirements.txt (for Python), mvn install (for Java/Maven)]` ⚙️
-        4.  Create the database: `[e.g., mysql -u root -p < create_database.sql]` ➕
-        5.  Configure the database connection: [Explain how to set up connection properties, e.g., "Edit the `config.properties` file 📝 with your database credentials."]
-        6.  Run the application: `[e.g., java -jar your-application.jar 🚀, python main.py 🐍, etc.]` ▶️
-        [Add more steps as needed]
+This project primarily focuses on the database layer. It can be interacted with directly via SQL clients or through simple Python scripts. A potential extension could involve building a simple client-server application (e.g., using Flask/Django) that interacts with this database, creating a 3-Tier architecture 🏢🏢🏢.
 
-## How to Use
+## Getting Started
 
-How to use the application. Provided examples of common use cases, commands ⌨️, or GUI interactions. Include screenshots 🖼️ if helpful.
+Follow these instructions to set up the project environment on your local machine for development and practice purposes.
 
-* **Connecting to the database:** "The application will automatically connect to the database using the credentials provided in the `config.properties` file." 🔗
-* **Running a query:** "To execute a SQL query, use the query interface in the main menu." ⚙️
-* **Adding a new customer:** "To add a new customer, navigate to the 'Customers' section 🧑‍💼 and click 'Add Customer' ➕. Fill in the required information and click 'Save' ✅."
+### Prerequisites
+
+Ensure you have the following software installed:
+
+*   Python 3.8+ 🐍
+*   PostgreSQL Server (Version 12 or higher recommended) 🐘
+*   Git 🐙
+*   `pip` (Python package installer)
+
+### Installation
+
+A step-by-step guide to get your development environment running:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/M-Mikran-Sandhu/DBMS-Practice.git
+    cd DBMS-Practice
+    ```
+2.  **Set up the PostgreSQL Database:**
+    *   Connect to your PostgreSQL server (e.g., using `psql`).
+    *   Create a new database for this project:
+        ```sql
+        CREATE DATABASE ecommerce_practice;
+        ```
+    *   Create a dedicated user (optional but recommended):
+        ```sql
+        CREATE USER practice_user WITH PASSWORD 'your_strong_password';
+        GRANT ALL PRIVILEGES ON DATABASE ecommerce_practice TO practice_user;
+        ```
+    *   Connect to the new database (`\c ecommerce_practice`) and run the schema creation script (assuming you create a `schema.sql` file based on the diagram below):
+        ```bash
+        psql -U practice_user -d ecommerce_practice -a -f schema.sql 
+        # You might need to provide the host and prompt for password depending on your setup
+        ```
+3.  **Configure Environment (if using Python scripts):**
+    *   Create a virtual environment (recommended):
+        ```bash
+        python -m venv venv
+        source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+        ```
+    *   Create a `.env` file (copy from a potential `.env.example`) and add your database connection details:
+        ```plaintext
+        DB_NAME=ecommerce_practice
+        DB_USER=practice_user
+        DB_PASSWORD=your_strong_password
+        DB_HOST=localhost
+        DB_PORT=5432 
+        ```
+4.  **Install Python Dependencies (if any):**
+    *   If you have a `requirements.txt` file (e.g., for SQLAlchemy or psycopg2):
+        ```bash
+        pip install -r requirements.txt
+        ```
+        *(You might need `pip install psycopg2-binary sqlalchemy python-dotenv` initially)*
+
+5.  **Run Practice Scripts/Connect:**
+    *   You can now connect to the `ecommerce_practice` database using a SQL client (like DBeaver, pgAdmin, or `psql`) with the `practice_user` credentials.
+    *   If you create Python scripts (e.g., `populate_data.py`, `run_reports.py`), run them:
+        ```bash
+        python your_script_name.py
+        ```
+
+## Usage
+
+Examples of how to interact with the database:
+
+*   **Connecting via `psql`:**
+    ```bash
+    psql -U practice_user -d ecommerce_practice -h localhost
+    ```
+*   **Running SQL Queries (within `psql` or a GUI tool):**
+    ```sql
+    -- Find all customers
+    SELECT * FROM customer;
+
+    -- Find total quantity ordered for each product
+    SELECT p.name, SUM(li.quantity) AS total_quantity_ordered
+    FROM product p
+    JOIN line_item li ON p.product_id = li.product_id
+    GROUP BY p.name
+    ORDER BY total_quantity_ordered DESC;
+    ```
+*   **Using Python Scripts (Example):**
+    ```bash
+    # Example: Populate database with sample data
+    python scripts/populate_sample_data.py 
+
+    # Example: Generate a sales report
+    python scripts/generate_sales_report.py --month 2024-05
+    ```
+    *(These script names are examples; you would need to create them.)*
 
 ## Database Schema
 
-[Include a description of your database schema. This can be a text description, a diagram 📊, or a combination of both. Examples:]
+The database schema defines the structure for managing customers, products, orders, and line items.
 
-* **Text Description:**
-    * "The database consists of the following tables: `Customers` 🧑‍💼, `Orders` 🛒, `Products` 📦, and `Order_Items`.
-    * The `Customers` table stores customer information (customer_id, name 🏷️, address 📍, etc.).
-    * The `Orders` table stores order details (order_id, customer_id, order_date 📅, etc.).
-    * ... [Describe the other tables and their relationships]
-* **Diagram:**
-    * [You can use Markdown to create a simple diagram, or embed an image of your database schema. For a more complex diagram, consider using a tool like draw.io and embedding the exported image.]
-    * Example (simple):
-        ```
-        Customers 🧑‍💼 -- Orders 🛒
-        Orders 🛒 -- Order_Items 📦
-        Products 📦 -- Order_Items 🛒
-        ```
+*   **Diagrams:** A visual representation (ERD) of the schema:
+    ```mermaid
+    erDiagram
+        CUSTOMER ||--o{ ORDER : places
+        ORDER ||--|{ LINE_ITEM : contains
+        PRODUCT ||--o{ LINE_ITEM : ordered_in
+
+        CUSTOMER {
+            int customer_id PK "SERIAL"
+            varchar name
+            varchar email UNIQUE
+            text address
+            timestamp created_at
+        }
+        ORDER {
+            int order_id PK "SERIAL"
+            int customer_id FK
+            timestamp order_date
+            varchar status
+        }
+        LINE_ITEM {
+            int order_id PK, FK
+            int product_id PK, FK
+            int quantity
+            decimal price_per_unit "At time of order"
+        }
+        PRODUCT {
+            int product_id PK "SERIAL"
+            varchar name
+            text description
+            decimal current_price
+            int stock_quantity
+        }
+    ```
+    *(This Mermaid diagram represents the intended schema. Ensure your `schema.sql` file implements this structure, potentially adding constraints like NOT NULL, CHECK, etc.)*
+
+*   **Text Description:**
+    *   `CUSTOMER`: Stores customer information (unique ID, name, unique email, address, creation timestamp).
+    *   `PRODUCT`: Stores product details (unique ID, name, description, current price, stock level).
+    *   `ORDER`: Stores order header information (unique ID, customer reference, date, status like 'pending', 'shipped').
+    *   `LINE_ITEM`: Represents the items within an order (links Order and Product, stores quantity and the price paid per unit at the time of the order).
+    *   **Relationships:** Customers place Orders. Orders contain Line Items. Line Items refer to Products.
 
 ## Contributing
 
-How others can contribute to your project. Include guidelines for submitting pull requests 📤, bug reports 🐛, or feature requests ✨.
+Contributions are welcome, especially for practice and learning purposes! If you find bugs, have suggestions, or want to add more practice examples (like complex queries or stored procedures), please follow these steps:
 
-1.  Fork the repository. 🍴
-2.  Create a new branch for your feature or bug fix. 🌿
-3.  Commit your changes with clear and descriptive commit messages. ✍️
-4.  Push your branch to your fork. ⬆️
-    5.  Submit a pull request to the main branch of the original repository. 🤝
+1.  **Fork the repository** 🍴 on GitHub.
+2.  **Create a new branch** for your feature or bug fix: `git checkout -b feature/your-feature-name` or `bugfix/issue-description`. 🌿
+3.  **Make your changes** and commit them with clear, descriptive messages: `git commit -m 'Add feature X'` ✍️
+4.  **Push your branch** to your fork: `git push origin feature/your-feature-name` ⬆️
+5.  **Submit a pull request** 📤 to the `main` branch of the original repository. Describe your changes clearly in the pull request. 🤝
 
-## License
+Please ensure your code adheres to any existing style guidelines and includes relevant explanations or documentation for new practice examples.
 
-[Specify the license under which your project is released. This is important for open-source projects. If you don't know which license to choose, you can use a site like https://choosealicense.com/ to help you decide. Common licenses include MIT, Apache 2.0, and GPLv3. Example:]
+## License 📜
 
-This project is licensed under the [MIT License](LICENSE) 📜. (Replace "LICENSE" with a link to the full license file if you have one)
+This project is licensed under the [MIT License](LICENSE). (Consider adding a LICENSE file with the full MIT license text to the repository root).
 
-## Acknowledgments
+## Acknowledgements 🙏
 
-[Give credit to any individuals 🧑‍🤝‍🧑, libraries 📚, or resources 💡 that you used in your project. For example:]
+*   Inspired by common DBMS course exercises and online tutorials on relational database design.
+*   Utilizes the powerful and open-source PostgreSQL database.
+*   README structure inspired by examples found in `matiassingers/awesome-readme`.
 
-* [Thank you to...] 🙏
-* [This project uses the following libraries: ...] 🛠️
-* [Special thanks to...] 🎉
+## Contact 📧
 
-## Contact
+*   **Name:** M-Mikran-Sandhu
+*   **Email:** sandhumikran@gmail.com
+*   **GitHub:** [M-Mikran-Sandhu](https://github.com/M-Mikran-Sandhu)
 
-* Email: sandhumikran@gmail.com 📧
-* GitHub: M-Mikran-Sandhu 💻
