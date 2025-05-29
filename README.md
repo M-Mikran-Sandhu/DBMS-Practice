@@ -138,93 +138,36 @@ The database schema defines the structure for managing customers, products, orde
 *   **Diagrams:** A visual representation (ERD) of the schema:
     ```mermaid
     erDiagram
-    USERS ||--o{ ORDERS : places
-    ORDERS ||--|{ LINE_ITEMS : contains
-    PRODUCTS ||--o{ LINE_ITEMS : ordered_in
-    USERS ||--o{ CART : has
-    SELLERS ||--o{ PRODUCTS : offers
-    ORDERS ||--|{ PAYMENTS : involves
-    ORDERS ||--|{ DELIVERIES : handled_by
-    SALES ||--o{ PRODUCTS : discount_applies_to
+        CUSTOMER ||--o{ ORDER : places
+        ORDER ||--|{ LINE_ITEM : contains
+        PRODUCT ||--o{ LINE_ITEM : ordered_in
 
-    USERS {
-        int id PK "SERIAL"
-        varchar name
-        varchar email UNIQUE
-        varchar phone_number
-        text address
-        varchar user_type "Buyer, Seller, Admin"
-        varchar account_status "Active/Inactive"
-        timestamp created_at
-    }
-    
-    PRODUCTS {
-        int id PK "SERIAL"
-        varchar name
-        varchar category
-        text description
-        float price
-        int stock_availability
-        int seller_id FK
-        float ratings
-        timestamp created_at
-    }
-
-    ORDERS {
-        int id PK "SERIAL"
-        int customer_id FK
-        timestamp order_date
-        varchar payment_method
-        text delivery_address
-        varchar order_status "Pending, Shipped, Delivered"
-    }
-
-    PAYMENTS {
-        int id PK "SERIAL"
-        int order_id FK
-        varchar payment_method
-        varchar transaction_status
-        float amount_paid
-    }
-
-    DELIVERIES {
-        int id PK "SERIAL"
-        int order_id FK
-        varchar courier_service
-        timestamp estimated_delivery_date
-        varchar delivery_status
-    }
-
-    SELLERS {
-        int id PK "SERIAL"
-        varchar shop_name
-        text shop_description
-        float ratings
-        int total_products
-    }
-
-    CART {
-        int id PK "SERIAL"
-        int user_id FK
-        text products "List of product IDs"
-        float total_price
-    }
-
-    SALES {
-        int id PK "SERIAL"
-        varchar name
-        date SaleDate
-        date EndDate
-    }
-
-    LINE_ITEMS {
-        int order_id PK, FK
-        int product_id PK, FK
-        int quantity
-        decimal price_per_unit "At time of order"
-    }
-
-      
+        CUSTOMER {
+            int customer_id PK "SERIAL"
+            varchar name
+            varchar email UNIQUE
+            text address
+            timestamp created_at
+        }
+        ORDER {
+            int order_id PK "SERIAL"
+            int customer_id FK
+            timestamp order_date
+            varchar status
+        }
+        LINE_ITEM {
+            int order_id PK, FK
+            int product_id PK, FK
+            int quantity
+            decimal price_per_unit "At time of order"
+        }
+        PRODUCT {
+            int product_id PK "SERIAL"
+            varchar name
+            text description
+            decimal current_price
+            int stock_quantity
+        }
     ```
     *(This Mermaid diagram represents the intended schema. Ensure your `schema.sql` file implements this structure, potentially adding constraints like NOT NULL, CHECK, etc.)*
 
